@@ -33,5 +33,25 @@
 			[-41.38545, 174.77403]
 		]).addTo(mymap).bindPopup("I am a polygon.");
 	</script>
+
+	<script type="text/javascript">
+
+		// XXX: lat and lon may be around the wrong way on the database.
+		var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6d26b3085b2ce2e5d8f6400c044792df&lat=" + 
+				<%= @track.coordinates[0].longitude.to_s %> + "&lon=" + <%= @track.coordinates[0].latitude.to_s %> + "&format=json&nojsoncallback=1";
+
+		$.getJSON(url, 
+			function(result) {
+				console.log(url);
+				console.log(result);
+				$("span.test").html(result.photos.photo[0].title); 
+			})
+
+	</script>
+
+	<div data-role="main" class="ui-content">
+		<span class="test"> </span>
+	</div>		
+
 </body>
 </html>
