@@ -42,9 +42,19 @@
 
 		$.getJSON(url, 
 			function(result) {
+				
 				console.log(url);
 				console.log(result);
+
 				$("span.test").html(result.photos.photo[0].title); 
+
+				var photo1 = result.photos.photo[0];
+
+				var image_url = "https:\/\/farm" + photo1.farm + ".staticflickr.com\/" + photo1.server + "\/" + photo1.id + "_" + photo1.secret + ".jpg";
+
+				// "https:\/\/farm9.staticflickr.com\/8102\/8475556512_beca454079.jpg"
+
+				document.getElementById("image1").src = image_url;
 			})
 
 	</script>
@@ -52,6 +62,8 @@
 	<div data-role="main" class="ui-content">
 		<span class="test"> </span>
 	</div>		
+
+	<img id="image1" src="" </img>
 
 </body>
 </html>
