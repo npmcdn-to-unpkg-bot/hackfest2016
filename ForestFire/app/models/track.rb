@@ -5,7 +5,6 @@ class Track < ActiveRecord::Base
     def self.loadXml 
         doc = Nokogiri::XML(File.open("WCC_Tracks.kml")) 
         doc.css("Placemark").map do |placemark|
-            puts placemark 
             parseTrack(placemark) 
         end 
     end 
@@ -13,7 +12,7 @@ class Track < ActiveRecord::Base
     def self.parseTrack(xml)
         track = self.create!({
             name: xml.css("SimpleData[name=\"name_1\"]").first.text, 
-            length: xml.css("SimpleData [name=\"Shape_Length\"]").first
+            length: xml.css("SimpleData[name=\"Shape_Length\"]").first.text
         })
 
         parse_cord(xml.css("LineString coordinates").first).each do |cordinate|
@@ -28,24 +27,9 @@ class Track < ActiveRecord::Base
         end
 
     end
+    def estimated_time()
+        return ((self.length.to_f.round(1)/5000))*60
+    end
 
-	def load_xml
-
-		@doc = Nokogiri::XML(File.open("app/assets/WCC_Tracks.kml"))
-
-		@doc.css('Placemark').each do |placemark|
-
-  			# data = placemark.css('SimpleData')
-  			coords = placemark.at_css('coordinates')
-
-  			if coords
-
-  				coords.text.split(' ').each do |coord|
-  					(lon, lat) = coord.split(',')
-  					print "#{lat}, #{lon}"
-  				end
-  				puts "\n"
-  			end
-  		end
-	end
+	
 end
