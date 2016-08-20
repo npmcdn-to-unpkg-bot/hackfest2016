@@ -1,4 +1,6 @@
 class Track < ActiveRecord::Base
+  has_many :coordinates, :dependent => :delete_all
+  accepts_nested_attributes_for :coordinates
 
 	def load_xml
 
@@ -14,11 +16,9 @@ class Track < ActiveRecord::Base
   				coords.text.split(' ').each do |coord|
   					(lon, lat) = coord.split(',')
   					print "#{lat}, #{lon}"
-
   				end
   				puts "\n"
   			end
   		end
 	end
-
 end
