@@ -10,12 +10,21 @@
 </head>
 <body>
 
-  <%= @track.area_name %>
+  <%= @track.name %>
+  <% @track.coordinates.map do |c| %>
+    <br><%= c.latitude.to_s %>, <%= c.longitude.to_s  %>
+  <% end %>
 	<div id="mapid" style="width: 100%; height:40vh"></div>
 
 	<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
 	<script>
-		var mymap = L.map('mapid').setView([-41.28545, 174.77403], 16);
+
+    var coords = [
+    <% @track.coordinates.map do |c| %>
+      [<%= c.longitude.to_s %>, <%= c.latitude.to_s  %>],
+    <% end %>]
+    console.log(coords[0]);
+		var mymap = L.map('mapid').setView(coords[0], 18);
 
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY2RlaWdodG9uIiwiYSI6ImNpczJrNGV6dDAxM3gyemxrNWlzd3Njbm8ifQ.vv_McJTtMa2DmJNmDVypNA', {
 			maxZoom: 18,
@@ -25,13 +34,9 @@
 			id: 'mapbox.streets'
 		}).addTo(mymap);
 
-    L.marker([-41.28545, 174.77403]).addTo(mymap);
 
-		L.polygon([
-			[-41.38545, 174.77403],
-			[-41.28545, 174.67403],
-			[-41.38545, 174.77403]
-		]).addTo(mymap).bindPopup("I am a polygon.");
+    var polygon = L.polyline(coords, {color: 'green'}).addTo(mymap).bindPopup("I am a polygon.");
+
 	</script>
 </body>
 </html>
