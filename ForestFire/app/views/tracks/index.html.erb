@@ -12,6 +12,7 @@
 
   <%= @track.name %>
 	<div id="mapid" style="width: 100%; height:60vh"></div>
+	<button onclick="window.location.reload()"> New Walk Fam </button>
   <% @track.coordinates.map do |c| %>
     <br><%= c.latitude.to_s %>, <%= c.longitude.to_s  %>
   <% end %>
@@ -33,7 +34,9 @@
 		}).addTo(mymap);
 
     var polygon = L.polyline(coords, {color: 'green'}).addTo(mymap).bindPopup("I am a polygon.");
-    navigator.geolocation.getCurrentPosition(function(pos) {mymap.setView(pos, 18);});
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      mymap.setView(pos, 18);
+    });
 	</script>
 </body>
 </html>
