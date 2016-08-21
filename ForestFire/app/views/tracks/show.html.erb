@@ -64,7 +64,11 @@
 
 	var polygon = L.polyline(coords, {color: 'green'}).addTo(mymap)
 	navigator.geolocation.getCurrentPosition(function(pos) {
-		mymap.setView(pos, 18);
+
+		// console.log(pos);
+
+		if (pos != null)
+			mymap.setView({lat: pos.coords.latitude, lng: pos.coords.longitude}, 18);
 	});
 });
 </script>
