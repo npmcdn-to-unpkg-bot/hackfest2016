@@ -1,8 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Leaflet Quick Start Guide Example</title>
-	<meta charset="utf-8" />
+<script>
+	navigator.geolocation.getCurrentPosition(function(coord){getTrack(coord);},function(err){getTrack([-41.306481, 174.777290]);});
+	function getTrack(coord){
+		console.log("sending "+JSON.stringify({"coord":coord})+"....");
+		$.ajax({
+        type: "POST",
+        url: "/tracks",
+        data: JSON.stringify({"coord":coord}),
+        contentType: "application/json",
+        dataType: "text",
+        success: function (msg, status, jqXHR) {
+            var jsonUpdatedData = msg;
+						eval(msg);
+        }, error: function(){alert("Load failed");}
+    });
+	}
+</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,7 +23,6 @@
 <body>
 
   <%= @track.area_name %>
-	<%= @track.estimated_time %>
 	<div id="mapid" style="width: 100%; height:40vh"></div>
 
 	<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
