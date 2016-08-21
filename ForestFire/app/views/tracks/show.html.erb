@@ -67,7 +67,7 @@
 function changeImage() {
 	// XXX: lat and lon may be around the wrong way on the database.
 	var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6d26b3085b2ce2e5d8f6400c044792df&lat=" + 
-			<%= @track.coordinates[0].longitude.to_s %> + "&lon=" + <%= @track.coordinates[0].latitude.to_s %> + "&radius=0.3&format=json&nojsoncallback=1";
+			<%= @track.coordinates[0].longitude.to_s %> + "&lon=" + <%= @track.coordinates[0].latitude.to_s %> + "&radius=0.2&format=json&nojsoncallback=1";
 	$.getJSON(url, 
 		function(result) {
 			
