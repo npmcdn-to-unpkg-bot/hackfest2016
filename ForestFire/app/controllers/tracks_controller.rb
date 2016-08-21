@@ -21,7 +21,8 @@ class TracksController < ApplicationController
     xy = [-41.306481, 174.777290]
     puts "Val : " + params[:coord].to_s
     radius = 0.00001
-    @track = Coordinate.where(["longitude < ? and latitude < ? and longitude < ? and latitude < ?", xy[0]-radius, xy[1]-radius,xy[0]+radius, xy[1]+radius]).sample.track
+    @track = Coordinate.where(["longitude < ? and latitude < ? and longitude < ? and latitude < ?", 
+    	xy[0]-radius, xy[1]-radius,xy[0]+radius, xy[1]+radius]).sample.track
     offset = rand(Track.count)
     @track = Track.offset(offset).first #get random track
    # @estimated_time = (Track.length / 5.0)
