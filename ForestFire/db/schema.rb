@@ -11,20 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820043929) do
+ActiveRecord::Schema.define(version: 20160820231651) do
+
+  create_table "button_texts", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "coordinates", force: :cascade do |t|
-    t.float    "latitude",   null: false
-    t.float    "longitude",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "track_id"
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.string   "area_name",  null: false
-    t.string   "name",       null: false
-    t.float    "length",     null: false
+    t.string   "area_name"
+    t.string   "name"
+    t.float    "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
