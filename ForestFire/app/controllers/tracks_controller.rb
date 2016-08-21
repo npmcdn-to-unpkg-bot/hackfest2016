@@ -8,7 +8,7 @@ class TracksController < ApplicationController
     puts "COORDS: " + params[:coord].to_s
     # puts "COORDS: " + coords.to_s
     puts "TRACKS: " + random_track.to_s
-    redirect_to random_track
+    render text:"/tracks/#{random_track.id}"
   end
 
   def show

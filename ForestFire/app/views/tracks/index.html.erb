@@ -10,7 +10,7 @@
         dataType: "text",
         success: function (msg, status, jqXHR) {
             var jsonUpdatedData = msg;
-						eval(msg);
+						window.location.href = msg;
         }, error: function(){alert("Load failed");}
     });
 	}
