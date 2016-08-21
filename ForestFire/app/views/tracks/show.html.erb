@@ -57,7 +57,7 @@
 			var midpoint_lat = (coords[0][0] + geo_lat) / 2;
 			var midpoint_lng = (coords[0][1] + geo_lng) / 2;
 
-			var mymap = L.map('mapid').setView([midpoint_lat, midpoint_lng], 13);
+			var mymap = L.map('mapid').setView([midpoint_lat, midpoint_lng], 12);
 
 			L.marker([geo_lat, geo_lng]).addTo(mymap).bindPopup("You're here homeslice");
 
