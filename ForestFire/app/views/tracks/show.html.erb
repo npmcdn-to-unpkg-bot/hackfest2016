@@ -29,7 +29,9 @@
 		</div>
 	</div>
 
-<div class="delete-bar"> </div>
+<div class="delete-bar"><a href="/"><img src="/images/bin_icon.png" class="button"></a></div>
+
+<div id="like" class="like-bar"> <img src="/images/feet_icon.png" onclick="toggleDetail()" class="button"> </div>
 
 <div id="draggable" class="row">
 	<div class="col s12">
@@ -52,7 +54,8 @@ function nextTrack(){
 		window.location.href = '/';
 }
 function toggleDetail(){
-	alert("change the screen you trash");
+	$("#draggable").toggle();
+	$("#like").toggle();
 }
 
 $(document).ready(function(){
