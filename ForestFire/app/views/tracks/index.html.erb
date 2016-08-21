@@ -38,13 +38,13 @@
 
 		// XXX: lat and lon may be around the wrong way on the database.
 		var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6d26b3085b2ce2e5d8f6400c044792df&lat=" + 
-				<%= @track.coordinates[0].longitude.to_s %> + "&lon=" + <%= @track.coordinates[0].latitude.to_s %> + "&format=json&nojsoncallback=1";
+				<%= @track.coordinates[0].longitude.to_s %> + "&lon=" + <%= @track.coordinates[0].latitude.to_s %> + "&radius=0.03&format=json&nojsoncallback=1";
 
 		$.getJSON(url, 
 			function(result) {
 				
-				console.log(url);
-				console.log(result);
+				// console.log(url);
+				// console.log(result);
 
 				$("span.test").html(result.photos.photo[0].title); 
 
@@ -52,8 +52,10 @@
 
 				var image_url = "https:\/\/farm" + photo1.farm + ".staticflickr.com\/" + photo1.server + "\/" + photo1.id + "_" + photo1.secret + ".jpg";
 
+				// image_url format
 				// "https:\/\/farm9.staticflickr.com\/8102\/8475556512_beca454079.jpg"
 
+				// Set that image shit maaaaaannn
 				document.getElementById("image1").src = image_url;
 			})
 
