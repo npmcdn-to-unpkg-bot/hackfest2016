@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20160821005710) do
   end
 
   create_table "coordinates", force: :cascade do |t|
-    t.float    "latitude"
-    t.float    "longitude"
+    t.float    "latitude",   null: false
+    t.float    "longitude",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "track_id"
