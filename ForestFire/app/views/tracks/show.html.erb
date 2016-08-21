@@ -12,7 +12,10 @@
    <!-- Compiled and minified JavaScript -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
+	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
 	<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+	<link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
 
@@ -26,29 +29,50 @@
 		</div>
 	</div>
 
+<div class="delete-bar"> </div>
 
-<div class="row">
+<div id="draggable" class="row">
 	<div class="col s12">
 		<div class="card">
 			<div id="mapid" style="width: 100%;height:50vh"></div>
-
 			<div class="card-content center">
-				<p><%= @track.name %></p>
-				<a href='/' class="waves-effect waves-light btn"><%= @button.text %></a>
+				<h5><%= @track.name %></h5>
+				<p> <b> Path Length: </b> <%= @track.length.round(0) %>m </p>
 			</div>
 		</div>
 	</div>
 </div>
 
 <script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script>
-	$(document).ready(function(){
+function nextTrack(){
+		window.location.href = '/';
+}
+function toggleDetail(){
+	alert("change the screen you trash");
+}
+
+$(document).ready(function(){
+	$( "#draggable" ).draggable({
+		axis: "x",
+		stop: function( event, ui ) {
+	    console.log(ui.position.left);
+			if (ui.position.left < -110){
+				nextTrack();
+			}
+			else if (ui.position.left > 110) {
+				toggleDetail();
+			}
+	  }
+	});
 	var coords = [
 	<% @track.coordinates.map do |c| %>
 		[<%= c.longitude.to_s %>, <%= c.latitude.to_s  %>],
 	<% end %>]
 
-	var mymap = L.map('mapid').setView([(-41.306481+coords[0][0])/2,(174.777290+coords[0][1])/2], 13);
+	var mymap = L.map('mapid',{dragging:false}).setView([(-41.306481+coords[0][0])/2,(174.777290+coords[0][1])/2], 12);
 
 	L.marker([-41.306481, 174.777290]).addTo(mymap).bindPopup("You're here homeslice");
 
