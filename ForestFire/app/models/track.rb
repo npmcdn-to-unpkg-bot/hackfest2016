@@ -12,7 +12,8 @@ class Track < ActiveRecord::Base
     def self.parseTrack(xml)
         track = self.create!({
             name: xml.css("SimpleData[name=\"name_1\"]").first.text, 
-            length: xml.css("SimpleData[name=\"Shape_Length\"]").first.text
+            length: xml.css("SimpleData[name=\"Shape_Length\"]").first.text,
+            comment: xml.css("SimpleData[name=\"comments\"]").first.text
         })
 
         parse_cord(xml.css("LineString coordinates").first).each do |cordinate|
