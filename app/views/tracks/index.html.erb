@@ -1,0 +1,22 @@
+<img src="/images/tanner.jpg" width=100%>
+<div style="text-align:center"> 
+	<h3> LOADING... </h3> 
+</div>  
+
+<script>
+	navigator.geolocation.getCurrentPosition(function(coord){getTrack(coord);},function(err){getTrack([-41.306481, 174.777290]);});
+	function getTrack(coord){
+		console.log("sending "+JSON.stringify({"coord":coord})+"....");
+		$.ajax({
+        type: "POST",
+        url: "/tracks",
+        data: JSON.stringify({"coord":coord}),
+        contentType: "application/json",
+        dataType: "text",
+        success: function (msg, status, jqXHR) {
+            var jsonUpdatedData = msg;
+						window.location.href = msg;
+        }, error: function(){alert("Load failed");}
+    });
+	}
+</script>
