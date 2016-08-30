@@ -1,48 +1,3 @@
-
-<div class="container center">
-	<div>
-		<img src="/images/colorlogo.png" style="height:auto;width:30%"/>
-	</div>
-</div>
-
-<div class="delete-bar"><a href="/"><img src="/images/bin_icon.png" class="button"></a></div>
-
-<div id="like" class="like-bar"> <img src="/images/feet_icon.png" onclick="toggleDetail()" class="button"> </div>
-
-<div id="draggable" class="row">
-	<div class="col s12 m6 l6">
-		<div class="card">
-			<div id="mapid" style="width: 100%;height:50vh"></div>
-			<div class="card-content center">
-				<h5><%= @track.name %></h5>
-				<p> <b> Path Length: </b> <%= @track.length.round(0) %>m </p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div id="second" class="row" style="display:none;">
-	<div style="width: 100%;height:40vh"><img id="chill" src="/images/feet_icon.png" style="width: 100%;height:100%"></div>
-	<div class="second">
-		<h5><%= @track.name %></h5>
-		<br>
-		Estimated Time: <%= @track.estimated_time().round(0) %> Minutes
-		<br><br>
-		Comment: <%= @track.comment %>
-	</div>
-
-</div>
-
-<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<script>
-
-function snapToMiddle() {
-	$("#draggable").animate({
-	    left: $("#draggable").parent().width() / 2 - $("#draggable").width() / 2
-	}, 300);
-}
-
 function changeImage() {
 	// XXX: lat and lon may be around the wrong way on the database.
 	var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6d26b3085b2ce2e5d8f6400c044792df&lat=" +
@@ -84,9 +39,6 @@ $(document).ready(function(){
 			}
 			else if (ui.position.left > 110) {
 				toggleDetail();
-			}
-			else {
-				snapToMiddle();
 			}
 	  }
 	});
@@ -133,5 +85,3 @@ $(document).ready(function(){
 		//	mymap.setView({lat: pos.coords.latitude, lng: pos.coords.longitude}, 18);
 	};
 });
-
-</script>
