@@ -12929,3 +12929,773 @@ Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450
 
 
 Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 02:28:34 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:05:11 +1200
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 428ms (Views: 428.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:05:12 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (41.8ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (2.0ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.6ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 199[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 403]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 171[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 184ms (Views: 1.2ms | ActiveRecord: 53.5ms)
+
+
+Started GET "/tracks/1051" for 127.0.0.1 at 2016-08-31 03:05:12 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1051"}
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 1051]]
+  [1m[36mButtonText Load (0.7ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (3.5ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 1051]]
+  Rendered tracks/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 39ms (Views: 26.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/tracks/1051" for 127.0.0.1 at 2016-08-31 03:08:03 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1051"}
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 1051]]
+  [1m[35mButtonText Load (0.4ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (3.2ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 1051]]
+  Rendered tracks/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:08:03 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:08:03 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:08:03 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:08:03 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:08:03 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:08:03 +1200
+
+
+Started GET "/tracks/1051" for 127.0.0.1 at 2016-08-31 03:13:56 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1051"}
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 1051]]
+  [1m[36mButtonText Load (0.3ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (4.8ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 1051]]
+  Rendered tracks/show.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 42ms (Views: 25.2ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:13:56 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:13:56 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:13:56 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:13:56 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:13:56 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:13:56 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:14:00 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1238ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:14:02 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[36mCoordinate Load (31.8ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 93
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.2ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 110
+  Rendered text template (0.0ms)
+Completed 200 OK in 125ms (Views: 0.2ms | ActiveRecord: 33.2ms)
+
+
+Started GET "/tracks/464" for 127.0.0.1 at 2016-08-31 03:14:02 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"464"}
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 464]]
+  [1m[35mButtonText Load (0.5ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (3.5ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 464]]
+  Rendered tracks/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 28ms (Views: 19.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:15:19 +1200
+Processing by TracksController#index as HTML
+Completed 500 Internal Server Error in 935ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `insult' for #<Hash:0x007f70b81a8c10>):
+  app/controllers/tracks_controller.rb:8:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (70.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:15:44 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 690ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:15:44 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:15:44 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:15:44 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:15:44 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:15:44 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:15:44 +1200
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:15:45 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (29.1ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.2ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 173[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 154[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 172ms (Views: 0.4ms | ActiveRecord: 34.2ms)
+
+
+Started GET "/tracks/977" for 127.0.0.1 at 2016-08-31 03:15:46 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"977"}
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 977]]
+  [1m[36mButtonText Load (0.8ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (3.5ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 977]]
+  Rendered tracks/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 36ms (Views: 26.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:15:53 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1125ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:15:55 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[36mCoordinate Load (32.8ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 377]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 12
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.4ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 184
+  Rendered text template (0.0ms)
+Completed 200 OK in 166ms (Views: 0.3ms | ActiveRecord: 34.3ms)
+
+
+Started GET "/tracks/1247" for 127.0.0.1 at 2016-08-31 03:15:55 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1247"}
+  [1m[36mTrack Load (0.6ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 1247]]
+  [1m[35mButtonText Load (0.2ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (4.7ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 1247]]
+  Rendered tracks/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:15:58 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 676ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:15:59 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (30.7ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 131[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 1247]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 70[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 120ms (Views: 0.2ms | ActiveRecord: 32.4ms)
+
+
+Started GET "/tracks/333" for 127.0.0.1 at 2016-08-31 03:15:59 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"333"}
+  [1m[35mTrack Load (0.9ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 333]]
+  [1m[36mButtonText Load (1.3ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (6.3ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 333]]
+  Rendered tracks/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 30ms (Views: 20.1ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/tracks/333" for 127.0.0.1 at 2016-08-31 03:16:25 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"333"}
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 333]]
+  [1m[35mButtonText Load (0.4ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (8.6ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 333]]
+  Rendered tracks/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 41ms (Views: 29.6ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:16:26 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:16:26 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:16:26 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:16:26 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:16:26 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:16:26 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:16:27 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 709ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `insult' for #<Hash:0x007f70d6993498>):
+    1: <div style="text-align:center">
+    2: 	<h3> LOADING... </h3>
+    3: 
+    4: 	<%= @insult.insult %>
+    5: </div>
+    6: 
+    7: <script>
+  app/views/tracks/index.html.erb:4:in `_app_views_tracks_index_html_erb__1555478572162572626_70061306711220'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:17:46 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 664ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `insult' for #<Hash:0x007f70d66d6d18>):
+    1: <div style="text-align:center">
+    2: 	<h3> LOADING... </h3>
+    3: 
+    4: 	<%= @insult.insult %>
+    5: </div>
+    6: 
+    7: <script>
+  app/views/tracks/index.html.erb:4:in `_app_views_tracks_index_html_erb__1555478572162572626_70061306711220'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:17:54 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 720ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:17:55 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:17:55 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:17:55 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:17:55 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:17:55 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:17:55 +1200
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:17:56 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (31.3ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 403]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 189[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.2ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 153[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 140ms (Views: 0.3ms | ActiveRecord: 36.1ms)
+
+
+Started GET "/tracks/975" for 127.0.0.1 at 2016-08-31 03:17:56 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"975"}
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 975]]
+  [1m[36mButtonText Load (0.5ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (3.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 975]]
+  Rendered tracks/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 29ms (Views: 18.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/tracks/975" for 127.0.0.1 at 2016-08-31 03:20:07 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"975"}
+  [1m[36mTrack Load (0.6ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 975]]
+  [1m[35mButtonText Load (0.3ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (3.4ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 975]]
+  Rendered tracks/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 50ms (Views: 31.9ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:20:08 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:20:08 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:20:08 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:20:08 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:20:08 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:20:08 +1200
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:20:09 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 666ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:20:11 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (33.3ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 79[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 1253]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 130[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 139ms (Views: 0.2ms | ActiveRecord: 34.8ms)
+
+
+Started GET "/tracks/585" for 127.0.0.1 at 2016-08-31 03:20:11 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"585"}
+  [1m[35mTrack Load (0.8ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 585]]
+  [1m[36mButtonText Load (0.2ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (4.5ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 585]]
+  Rendered tracks/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:20:56 +1200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 992ms (Views: 306.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:20:57 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (32.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.7ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 150[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.5ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 147[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 162ms (Views: 0.8ms | ActiveRecord: 39.1ms)
+
+
+Started GET "/tracks/944" for 127.0.0.1 at 2016-08-31 03:20:58 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"944"}
+  [1m[35mTrack Load (0.4ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 944]]
+  [1m[36mButtonText Load (0.5ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (7.9ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 944]]
+  Rendered tracks/show.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 44ms (Views: 27.8ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:21:53 +1200
+Processing by TracksController#index as HTML
+Completed 500 Internal Server Error in 651ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `insult' for #<TracksController:0x007f154a0e2318>
+Did you mean?  @insult):
+  app/controllers/tracks_controller.rb:12:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:22:05 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 682ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:22:05 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:22:05 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:22:05 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:22:05 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:22:05 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:22:05 +1200
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:22:07 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[36mCoordinate Load (29.3ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 119]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 89
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.6ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 103
+  Rendered text template (0.0ms)
+Completed 200 OK in 139ms (Views: 0.3ms | ActiveRecord: 34.1ms)
+
+
+Started GET "/tracks/431" for 127.0.0.1 at 2016-08-31 03:22:07 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"431"}
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 431]]
+  [1m[35mButtonText Load (0.3ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (3.3ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 431]]
+  Rendered tracks/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:22:40 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 775ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:22:42 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (33.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.2ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 502]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 6[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 112[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 167ms (Views: 0.3ms | ActiveRecord: 39.9ms)
+
+
+Started GET "/tracks/467" for 127.0.0.1 at 2016-08-31 03:22:42 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"467"}
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 467]]
+  [1m[36mButtonText Load (0.5ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (5.7ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 467]]
+  Rendered tracks/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 52ms (Views: 39.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:23:53 +1200
+Processing by TracksController#index as HTML
+Completed 500 Internal Server Error in 669ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `insult' for #<String:0x007f1549a40c08>
+Did you mean?  insert):
+  app/controllers/tracks_controller.rb:8:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:25:00 +1200
+Processing by TracksController#index as HTML
+Completed 500 Internal Server Error in 691ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `insult' for #<Hash:0x007f154a8efb78>):
+  app/controllers/tracks_controller.rb:8:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:25:31 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 708ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-31 03:25:32 +1200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-08-31 03:25:32 +1200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-31 03:25:32 +1200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-08-31 03:25:32 +1200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-08-31 03:25:32 +1200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-08-31 03:25:32 +1200
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:25:34 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[36mCoordinate Load (34.6ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.1ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 377]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.2ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.3ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 174
+  Rendered text template (0.0ms)
+Completed 200 OK in 138ms (Views: 0.3ms | ActiveRecord: 39.2ms)
+
+
+Started GET "/tracks/1074" for 127.0.0.1 at 2016-08-31 03:25:34 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1074"}
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 1074]]
+  [1m[35mButtonText Load (0.3ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (3.6ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 1074]]
+  Rendered tracks/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 32ms (Views: 23.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:26:04 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 648ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:26:05 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (30.6ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 1252]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 196[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.2ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 502]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 75[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 135ms (Views: 0.3ms | ActiveRecord: 35.5ms)
+
+
+Started GET "/tracks/351" for 127.0.0.1 at 2016-08-31 03:26:06 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"351"}
+  [1m[35mTrack Load (0.6ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 351]]
+  [1m[36mButtonText Load (0.4ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (3.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 351]]
+  Rendered tracks/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 48ms (Views: 26.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:26:31 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 682ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:26:32 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[36mCoordinate Load (30.3ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.2ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.4ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 9
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)[0m
+  [1m[35mTrack Load (0.2ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 115]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tracks"[0m
+  [1m[35mTrack Load (0.4ms)[0m  SELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 92
+  Rendered text template (0.0ms)
+Completed 200 OK in 151ms (Views: 0.3ms | ActiveRecord: 36.0ms)
+
+
+Started GET "/tracks/386" for 127.0.0.1 at 2016-08-31 03:26:33 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"386"}
+  [1m[36mTrack Load (0.9ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 386]]
+  [1m[35mButtonText Load (0.8ms)[0m  SELECT "button_texts".* FROM "button_texts"
+  [1m[36mCoordinate Load (9.3ms)[0m  [1mSELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1[0m  [["track_id", 386]]
+  Rendered tracks/show.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 48ms (Views: 32.4ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-31 03:26:37 +1200
+Processing by TracksController#index as HTML
+  Rendered tracks/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 685ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2016-08-31 03:26:38 +1200
+Processing by TracksController#create as TEXT
+  Parameters: {"coord"=>[-41.306481, 174.77729], "track"=>{}}
+  [1m[35mCoordinate Load (29.6ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 136]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.5ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 106[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE (longitude < -41.306491 and latitude < 174.77728 and longitude < -41.306470999999995 and latitude < 174.7773)
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1[0m  [["id", 353]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT  "tracks".* FROM "tracks"  ORDER BY "tracks"."id" ASC LIMIT 1 OFFSET 75[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 127ms (Views: 0.2ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/tracks/351" for 127.0.0.1 at 2016-08-31 03:26:39 +1200
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"351"}
+  [1m[35mTrack Load (0.4ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT 1  [["id", 351]]
+  [1m[36mButtonText Load (0.2ms)[0m  [1mSELECT "button_texts".* FROM "button_texts"[0m
+  [1m[35mCoordinate Load (4.6ms)[0m  SELECT "coordinates".* FROM "coordinates" WHERE "coordinates"."track_id" = $1  [["track_id", 351]]
+  Rendered tracks/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 22ms (Views: 15.6ms | ActiveRecord: 5.2ms)

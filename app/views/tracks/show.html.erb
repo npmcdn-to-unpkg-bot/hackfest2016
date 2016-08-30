@@ -66,6 +66,15 @@ $(function() {
 			snapToMiddle();
 		}
 	});
+
+	$.ajax({
+    type: "GET",
+    url: "http://quandyfactory.com/insult/json",
+    dataType: "json",
+    success: function(xml){
+        alert(xml);
+    }
+});
 } );
 
 
