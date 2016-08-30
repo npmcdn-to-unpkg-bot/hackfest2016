@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :tracks
+  get '/sandbox/:id' => 'tracks#sandbox'
   root 'tracks#index'
 
   # Example of regular route:
