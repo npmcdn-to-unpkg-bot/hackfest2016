@@ -4,8 +4,7 @@ class TracksController < ApplicationController
   def index
     source = 'http://quandyfactory.com/insult/json'
     resp = Net::HTTP.get_response(URI.parse(source))
-    data = resp.body
-    @insult = ActiveSupport::JSON.decode(data)["insult"]
+    @insult = ActiveSupport::JSON.decode(resp.body)["insult"]
   end
 
   def create
