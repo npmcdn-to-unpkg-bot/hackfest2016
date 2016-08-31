@@ -1,7 +1,10 @@
 class TracksController < ApplicationController
-  # before_filter :random_track
-  def index
+  require 'net/http'
 
+  def index
+    source = 'http://quandyfactory.com/insult/json'
+    resp = Net::HTTP.get_response(URI.parse(source))
+    @insult = ActiveSupport::JSON.decode(resp.body)["insult"]
   end
 
   def create
